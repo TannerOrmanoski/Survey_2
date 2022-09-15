@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Questionnaire</title>
+</head>
+<body>
+    <header>
+        <h1>Participant Questionnaire</h1>
+        <p>Tell us About Yourself</p>
+    </header>
+    <form>
+        <div class="survey">
+            <div class="q1">
+                <h3>What is your name?</h3>
+                <input id="name" type="text" name="name" placeholder="Enter Name" class="form-input" required/> 
+                <button id="next1" type="submit" class="next-button1"> Next </button>
+            </div>
+        
+
+            <div class="q2">
+                <h3>What is your job title?</h3>
+                <input id="title" type="text" name="title" placeholder="Enter Job Title" class="form-input" required/> 
+                <button id="next2" type="submit" class="next-button2"> Next </button>
+            </div>
+
+            <div class="q3">
+                <h3>What is your role?</h3>
+                <input id="role" type="text" name="role" placeholder="Enter Role" class="form-input" required/> 
+                <button id="next3" type="submit" class="next-button3"> Next </button>
+            </div>
+
+            <div class="q4">
+                <h3>Who do you report to?</h3>
+                <input id="reportsTo" type="text" name="report" placeholder="Enter Who You Report To" class="form-input" required/> 
+                <button id="next4" type="submit" class="next-button4"> Next </button>
+            </div>
+
+            <div class="q5">
+                <h3>What is a fun fact about you?</h3>
+                <input id="funFact" type="text" name="fact" placeholder="Enter Fun Fact" class="form-input" required/> 
+                <button id="btn" type="submit" class="next-button5"> Next </button>
+            </div>
+        </div>
+
+        <div class="end">
+            <h1>Thank You!</h1>
+            <p>Enjoy The Summit</p>
+        </div>
+        <div id="msg">
+            <pre></pre>
+        </div>    
+    </form>
+  <script src=app.js></script>
+</body>
+</html>
