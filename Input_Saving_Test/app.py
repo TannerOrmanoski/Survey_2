@@ -1,0 +1,27 @@
+import json
+
+from flask import request
+
+from flask import Flask, render_template
+
+app = Flask(__name__,
+            static_folder='static',
+            template_folder='templates')
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/test', methods=['POST'])
+def test():
+    output = request.get_json()
+    print(output) # This is the output that was stored in the JSON within the browser
+    print(type(output))
+    result = json.load(output) # This converts the json output to a python dictionary
+    print(result) # Printing the new dictionary
+    print(type(result)) # This shows the json converted as a pyhthon dictionary
+    return result
+
+if __name__ == "__main__":
+    app.run(debug=True)

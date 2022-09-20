@@ -32,6 +32,12 @@ const addPerson = (ev)=>{
     console.warn('added' , {persons} );
     let pre = document.querySelector('#msg pre');
     pre.textContent = '\n' + JSON.stringify(persons, '\t', 2);
+    $.ajax({
+        url:"/test",
+        type:"Post",
+        contentType: "application/json",
+        data: JSON.stringify(persons)
+    });
 
     //saving to localStorage
     //localStorage.setItem('SurveyResults', JSON.stringify(names) );

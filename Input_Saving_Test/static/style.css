@@ -11,7 +11,7 @@
 body {
     font-family: "Roboto";
     text-align: center;
-    background-image: url('dark-paths.png');
+    background-image: url('Images/dark-paths.png');
 }
 
 a {
@@ -20,7 +20,7 @@ a {
 }
 
 header {
-    background-image: url('3175990.jpg');
+    background-image: url('Images/3175990.jpg');
     color: black;
     padding: 10px;
 }
@@ -33,7 +33,7 @@ header p {
     position: relative;
     width: 80%;
     margin: 20px auto;
-    background-image: url('what-the-hex-dark.png');
+    background-image: url('Images/what-the-hex-dark.png');
     color: white;
     height: 200px;
     border-radius: 3px;
