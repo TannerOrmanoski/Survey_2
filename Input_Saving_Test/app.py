@@ -1,4 +1,5 @@
 import json
+from urllib import response
 
 from flask import request
 
@@ -13,15 +14,21 @@ app = Flask(__name__,
 def index():
     return render_template('index.html')
 
-@app.route('/test', methods=['POST'])
+@app.route('/test', methods=['POST', 'GET'])
 def test():
     output = request.get_json()
-    print(output) # This is the output that was stored in the JSON within the browser
-    print(type(output))
-    result = json.load(output) # This converts the json output to a python dictionary
-    print(result) # Printing the new dictionary
-    print(type(result)) # This shows the json converted as a pyhthon dictionary
-    return result
+    print(f'output: {output}, output type: {type(output)}') # This is the output that was stored in the JSON within the browser
+    response = app.response_class(
+        response=json.dumps(output),
+        status=200,
+        mimetype='application/json'
+    )
+    return response 
+    # print(type(output))
+    # result = json.load(output) # This converts the json output to a python dictionary
+    # print(result) # Printing the new dictionary
+    # print(type(result)) # This shows the json converted as a pyhthon dictionary
+    # return result
 
 if __name__ == "__main__":
     app.run(debug=True)

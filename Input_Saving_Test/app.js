@@ -18,7 +18,7 @@ let persons = [];
 
 const addPerson = (ev)=>{
     ev.preventDefault(); //stop form from submitting
-    let person = {
+    const person = {
         name: document.getElementById("name").value,
         title: document.getElementById("title").value,
         role: document.getElementById("role").value,
@@ -32,11 +32,12 @@ const addPerson = (ev)=>{
     console.warn('added' , {persons} );
     let pre = document.querySelector('#msg pre');
     pre.textContent = '\n' + JSON.stringify(persons, '\t', 2);
+    const people = JSON.stringify(persons);
     $.ajax({
-        url:"/test",
-        type:"Post",
+        url: '/test',
+        type: "POST",
         contentType: "application/json",
-        data: JSON.stringify(persons)
+        data: JSON.stringify(people)
     });
 
     //saving to localStorage
