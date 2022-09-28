@@ -34,10 +34,10 @@ const addPerson = (ev)=>{
     pre.textContent = '\n' + JSON.stringify(persons, '\t', 2);
     const people = JSON.stringify(persons);
     $.ajax({
-        url: '/test',
+        url: "/test",
         type: "POST",
         contentType: "application/json",
-        data: JSON.stringify(people)
+        data: people
     });
 
     //saving to localStorage

@@ -1,9 +1,12 @@
 import json
+
 from urllib import response
 
 from flask import request
 
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
+
+import pandas as pd
 
 app = Flask(__name__,
             static_folder='static',
@@ -14,7 +17,7 @@ app = Flask(__name__,
 def index():
     return render_template('index.html')
 
-@app.route('/test', methods=['POST', 'GET'])
+@app.route("/test", methods=["POST"])
 def test():
     output = request.get_json()
     print(f'output: {output}, output type: {type(output)}') # This is the output that was stored in the JSON within the browser
@@ -23,7 +26,12 @@ def test():
         status=200,
         mimetype='application/json'
     )
+    df = pd.DataFrame(output)
+    print(df)    
+
     return response 
+     
+
     # print(type(output))
     # result = json.load(output) # This converts the json output to a python dictionary
     # print(result) # Printing the new dictionary
